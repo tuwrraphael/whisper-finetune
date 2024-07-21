@@ -1,0 +1,1 @@
+docker build --build-arg requirements=requirements_cpu.txt --progress=plain -f Dockerfile -t whisper-finetune . \

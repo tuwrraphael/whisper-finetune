@@ -11,7 +11,7 @@ scp_entries = open(f"{args.source_data_dir}/audio_paths", 'r').readlines()
 txt_entries = open(f"{args.source_data_dir}/text", 'r').readlines()
 
 if len(scp_entries) == len(txt_entries):
-    audio_dataset = Dataset.from_dict({"audio": [audio_path.split()[1].strip() for audio_path in scp_entries],
+    audio_dataset = Dataset.from_dict({"audio": [" ".join(audio_path.split()[1:]).replace("\\","\ ").strip() for audio_path in scp_entries],
                     "sentence": [' '.join(text_line.split()[1:]).strip() for text_line in txt_entries]})
 
     audio_dataset = audio_dataset.cast_column("audio", Audio(sampling_rate=16_000))

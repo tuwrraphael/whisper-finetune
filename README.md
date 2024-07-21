@@ -1,3 +1,31 @@
+# Steps
+1. Clone Repo
+2. Install nvidia toolkit on host
+3. Copy samples to repo
+4. chmod +x ./docker_build_cpu.sh ./docker_build_gpu.sh ./docker.sh ./docker_tensorboard.sh
+5. ./docker_build_gpu.sh OR ./docker_build_cpu.sh
+6. ./docker.sh
+
+inside docker:
+
+7. check nvidia-smi
+8. accelerate config
+9. chmod +x train.sh evaluate_checkpoint.sh get_final_model.sh
+10. train.sh
+
+outside docker:
+
+11. other terminal: docker_tensorboard.sh
+
+wait for training finished
+
+inside docker:
+
+12. evaluate_checkpoint.sh
+13. get_final_model.sh
+14. python3 faster_whisper_transcribe.py
+
+
 # Fine-tuning and evaluating Whisper models for Automatic Speech Recognition
 
 This repository contains the relevant scripts to fine-tune and evaluate Whisper models of various configurations available over huggingface 🤗.
