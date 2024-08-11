@@ -1,7 +1,7 @@
 #!/bin/bash
 docker container stop whisper
 docker container rm whisper
-cp -r final_model_ct2 ~/whisper-data
+cp -r final_model_ct2 ~/whisper-data/
 docker run -d \
   --name whisper \
   --restart=unless-stopped \

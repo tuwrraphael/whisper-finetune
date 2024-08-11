@@ -282,7 +282,7 @@ if args.train_strategy == 'epoch':
         learning_rate=args.learning_rate,
         warmup_steps=args.warmup,
         gradient_checkpointing=gradient_checkpointing,
-        fp16=True,
+        #fp16=True,
         evaluation_strategy="epoch",
         save_strategy="epoch",
         num_train_epochs=args.num_epochs,
@@ -295,7 +295,7 @@ if args.train_strategy == 'epoch':
         load_best_model_at_end=True,
         metric_for_best_model="wer",
         greater_is_better=False,
-        optim="adamw_bnb_8bit",
+        optim="adamw_torch",
         resume_from_checkpoint=args.resume_from_ckpt,
     )
 
