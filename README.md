@@ -1,7 +1,16 @@
 # Steps
+
+# Generate Training Data
+1. Gather training data (eg. download recorded alexa audio and transcriptions from your amazon account)
+2. Extract everything into one folder
+3. Adjust paths in prepare_samples.sh and docker_prepare_samples.sh and getsamples.py 
+4. Prepare some evaluation data
+
+# Training
+
 1. Clone Repo
 2. Install nvidia toolkit on host
-3. Copy samples to repo
+3. Copy samples to a location, adjust docker.sh to mount them
 4. chmod +x ./docker_build_cpu.sh ./docker_build_gpu.sh ./docker.sh ./docker_tensorboard.sh
 5. ./docker_build_gpu.sh OR ./docker_build_cpu.sh
 6. ./docker.sh
